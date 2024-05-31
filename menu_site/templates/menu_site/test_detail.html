@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ test.name }}{% endblock title %}
+
+{% block content %}
+
+<h1>{{ test.name }}</h1>
+
+{% if questions %}
+    <ol>
+        {% for question in questions %}
+            <li>{{ question.text }}</li>
+        {% endfor %}
+    </ol>
+{% else %}
+    <p>Нет вопросов для этого теста.</p>
+{% endif %}
+
+{% endblock content %}
